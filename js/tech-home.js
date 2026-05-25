@@ -20,7 +20,7 @@
 
     const intro = document.createElement('p');
     intro.className = 'tech-intro';
-    intro.textContent = '记录计算机专业、科研学习和日常思考';
+    intro.textContent = '记录计算机领域内容、科研学习和日常思考';
 
     const chips = document.createElement('div');
     chips.className = 'tech-domains';
