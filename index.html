@@ -1,395 +1,225 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>湘云的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="记录计算机专业、科研学习和日常思考">
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>湘云的博客 - 科研、技术与生活记录</title><meta name="author" content="Chen Xiangyun"><meta name="copyright" content="Chen Xiangyun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#070b18"><meta name="description" content="记录计算机领域内容、科研学习和日常思考">
 <meta property="og:type" content="website">
 <meta property="og:title" content="湘云的博客">
 <meta property="og:url" content="https://chenxiangyunyun.github.io/index.html">
 <meta property="og:site_name" content="湘云的博客">
-<meta property="og:description" content="记录计算机专业、科研学习和日常思考">
+<meta property="og:description" content="记录计算机领域内容、科研学习和日常思考">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chenxiangyunyun.github.io/img/butterfly-icon.png">
 <meta property="article:author" content="Chen Xiangyun">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="湘云的博客" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="https://chenxiangyunyun.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "湘云的博客",
+  "alternateName": [
+    "科研、技术与生活记录",
+    "chenxiangyunyun.github.io"
+  ],
+  "url": "https://chenxiangyunyun.github.io/"
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://chenxiangyunyun.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#070b18')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 8.1.2"></head>
-
-<body class="page-home">
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">湘云的博客</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">科研、技术与生活记录</a>
-        </h2>
-      
-      
-        <p class="hero-intro">记录计算机专业、科研学习和日常思考</p>
-        <div class="hero-tags" aria-label="研究方向">
-          <span>Computer Vision</span>
-          <span>3D Reconstruction</span>
-          <span>Neural Rendering</span>
-          <span>Gaussian Splatting</span>
-          <span>Point Cloud</span>
-          <span>Robotics Perception</span>
-        </div>
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '湘云的博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/custom-tech.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div class="bg-animation" id="web_bg" style="background: radial-gradient(circle at 16% 12%, rgba(42, 116, 212, .14), transparent 32%), radial-gradient(circle at 85% 10%, rgba(123, 63, 191, .14), transparent 30%), linear-gradient(145deg, #050814 0%, #091326 52%, #120c21 100%);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于我</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background: radial-gradient(circle at 50% 38%, rgba(46, 183, 255, .15), transparent 24%), radial-gradient(circle at 18% 18%, rgba(48, 129, 236, .2), transparent 29%), radial-gradient(circle at 84% 16%, rgba(150, 78, 230, .2), transparent 31%), linear-gradient(125deg, #040714 0%, #07172e 46%, #17102d 100%);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">湘云的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">湘云的博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Chenxiangyunyun" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #74c8ff;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/05/23/my-first-blog/" title="我的第一篇 GitHub 博客：人生阶段的记录与思考">我的第一篇 GitHub 博客：人生阶段的记录与思考</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-05-23T12:00:00.000Z" title="发表于 2026-05-23 20:00:00">2026-05-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content"> 有些经历，当时只是普通的一天；但多年以后再回头看，可能正是它们悄悄改变了自己。 写在前面这是我在 GitHub Pages 上搭建的第一篇博客。 一开始想写博客的时候，我也想过很多方向：技术笔记、科研记录、论文阅读、项目总结。后来慢慢觉得，真正值得长期记录的，不只是“我学会了什么”，还有“我经历了什么”“我为什么会这样想”“我在哪些地方反复跌倒，又是怎样一点点调整自己的”。 所以，这个博客对我来说，不只是一个展示学习成果的地方，更像是一份长期的成长记录。 它会记录我在...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/05/23/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-05-23T07:52:58.729Z" title="发表于 2026-05-23 15:52:58">2026-05-23</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &q...</div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/23/my-first-blog/" title="我的第一篇 GitHub 博客：人生阶段的记录与思考">我的第一篇 GitHub 博客：人生阶段的记录与思考</a><time datetime="2026-05-23T12:00:00.000Z" title="发表于 2026-05-23 20:00:00">2026-05-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/23/hello-world/" title="Hello World">Hello World</a><time datetime="2026-05-23T07:52:58.729Z" title="发表于 2026-05-23 15:52:58">2026-05-23</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">随笔</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/GitHub%E5%8D%9A%E5%AE%A2/" style="font-size: 1.1em; color: #999">GitHub博客</a> <a href="/tags/%E6%88%90%E9%95%BF%E8%AE%B0%E5%BD%95/" style="font-size: 1.1em; color: #999">成长记录</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/" style="font-size: 1.1em; color: #999">生活感悟</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">首页</a>
-        
-          <a class="main-nav-link" href="/archives">归档</a>
-        
-          <a class="main-nav-link" href="/categories">分类</a>
-        
-          <a class="main-nav-link" href="/tags">标签</a>
-        
-          <a class="main-nav-link" href="/about">关于我</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://Chenxiangyunyun.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
   
-    <article id="post-my-first-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/05/23/my-first-blog/" class="article-date">
-  <time class="dt-published" datetime="2026-05-23T12:00:00.000Z" itemprop="datePublished">2026-05-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/23/my-first-blog/">我的第一篇 GitHub 博客：人生阶段的记录与思考</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <ul class="card-archive-list">
       
-        <p><img src="/images/my_first_blog/cover.png"></p>
-<p>有些经历，当时只是普通的一天；<br>但多年以后再回头看，可能正是它们悄悄改变了自己。</p>
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>这是我在 GitHub Pages 上搭建的第一篇博客。</p>
-<p>一开始想写博客的时候，我也想过很多方向：技术笔记、科研记录、论文阅读、项目总结。后来慢慢觉得，真正值得长期记录的，不只是“我学会了什么”，还有“我经历了什么”“我为什么会这样想”“我在哪些地方反复跌倒，又是怎样一点点调整自己的”。</p>
-<p>所以，这个博客对我来说，不只是一个展示学习成果的地方，更像是一份长期的成长记录。</p>
-<p>它会记录我在人生不同阶段里遇到的人、经历的事、犯过的错、想明白的道理，以及那些暂时还没有答案的问题。</p>
-<hr>
-<h2 id="为什么想开始写博客"><a href="#为什么想开始写博客" class="headerlink" title="为什么想开始写博客"></a>为什么想开始写博客</h2><p>人在不同阶段会经历很多事情。</p>
-<p>有些是学习和工作中的问题，有些是生活里的小事，有些是和别人交流之后产生的触动，也有些是自己反复犯过的错误。</p>
-<p>很多事情刚发生的时候，好像只是一个很普通的瞬间。但过一段时间再回头看，会发现它们其实影响了自己的想法、习惯和选择。</p>
-<p>有时候，一些错误不是第一次出现。</p>
-<p>明明之前已经遇到过类似的问题，换了一个场景之后，还是会以差不多的方式再次发生。</p>
-<p>比如：</p>
-<ul>
-<li>明知道拖延会带来压力，却还是习惯等到最后才开始；</li>
-<li>明知道沟通很重要，却还是经常把问题先憋在心里；</li>
-<li>明知道行动比空想重要，却还是容易在开始前想太多；</li>
-<li>明知道有些事情没有那么严重，却还是会被焦虑困住；</li>
-<li>明知道自己已经经历过类似问题，却还是会重复同样的反应。</li>
-</ul>
-<p>如果不记录下来，这些经历很容易被时间冲淡。下一次遇到类似情况时，可能还是会重复原来的思维方式和行为模式。</p>
-<p>写下来，不一定能立刻改变什么。</p>
-<p>但至少可以让自己看见问题。</p>
-<hr>
-<h2 id="我想记录什么"><a href="#我想记录什么" class="headerlink" title="我想记录什么"></a>我想记录什么</h2><p>这个博客以后大概会记录下面几类内容。</p>
-<hr>
-<h3 id="01｜成长阶段中的体验和感悟"><a href="#01｜成长阶段中的体验和感悟" class="headerlink" title="01｜成长阶段中的体验和感悟"></a>01｜成长阶段中的体验和感悟</h3><p>有些经历不一定很宏大，可能只是一次普通的聊天、一次活动、一段旅程，或者某个瞬间突然产生的想法。</p>
-<p>但这些看似普通的片段，往往会在后来变成理解自己的线索。</p>
-<p>我希望把这些时刻记录下来。</p>
-<p>不是为了证明自己有多成熟，而是为了留下真实的变化过程。</p>
-<hr>
-<h3 id="02｜自己反复犯过的错误"><a href="#02｜自己反复犯过的错误" class="headerlink" title="02｜自己反复犯过的错误"></a>02｜自己反复犯过的错误</h3><p>有些错误会重复出现。</p>
-<p>如果每次只是后悔一下，然后很快忘掉，下一次可能还是会以相似的方式发生。</p>
-<p>所以我希望把这些问题写下来：</p>
-<ul>
-<li>当时为什么会这样做？</li>
-<li>后来发现哪里不对？</li>
-<li>这个问题以前是否出现过？</li>
-<li>下次遇到类似情况时，可以怎样调整？</li>
-</ul>
-<p>写下来不是为了否定自己，而是为了更清楚地看见自己。</p>
-<p>有时候，真正的成长不是一下子变得多厉害，而是开始意识到：</p>
-<blockquote>
-<p>原来我总是在类似的问题上摔倒。</p>
-</blockquote>
-<hr>
-<h3 id="03｜学习、科研和实践中的思考"><a href="#03｜学习、科研和实践中的思考" class="headerlink" title="03｜学习、科研和实践中的思考"></a>03｜学习、科研和实践中的思考</h3><p>人生阶段里也离不开学习和实践。</p>
-<p>无论是课程、科研、项目，还是某个技术工具的使用过程，都会有很多值得记录的地方。</p>
-<p>很多问题解决之后，如果不记录下来，下次很可能还会重新踩坑。</p>
-<p>所以我也会把一些学习过程、工具经验和项目总结整理到博客里。</p>
-<p>这些内容可能包括：</p>
-<ul>
-<li>GitHub 和博客搭建记录；</li>
-<li>编程、LaTeX、论文写作等工具经验；</li>
-<li>科研项目中的问题和思考；</li>
-<li>阅读论文后的理解与总结；</li>
-<li>项目推进过程中的踩坑和复盘。</li>
-</ul>
-<p>这些内容不一定都是完整成熟的成果，也可以是某个阶段的想法、尝试和反思。</p>
-<hr>
-<h3 id="04｜生活中有意思的人和事"><a href="#04｜生活中有意思的人和事" class="headerlink" title="04｜生活中有意思的人和事"></a>04｜生活中有意思的人和事</h3><p>生活里会遇到很多有意思的瞬间。</p>
-<p>有时候是一件小事，让我突然意识到自己以前的想法太片面。</p>
-<p>有时候是一段经历，让我发现不同人看待世界的方式真的很不一样。</p>
-<p>有时候是一次选择，让我重新理解什么是重要的，什么其实没有那么重要。</p>
-<p>这些瞬间如果不写下来，很快就会被新的事情覆盖掉。</p>
-<p>但它们其实也是一个人慢慢成长的痕迹。</p>
-<hr>
-<h2 id="写博客的意义"><a href="#写博客的意义" class="headerlink" title="写博客的意义"></a>写博客的意义</h2><p>我觉得写博客最大的意义，是把“经历过”变成“真正理解过”。</p>
-<p>很多时候，我们只是经历了一件事，但没有真正停下来想清楚。</p>
-<p>等以后再遇到类似问题时，又会重复原来的情绪、判断和行为方式。</p>
-<p>如果能把问题、过程、原因和感受记录下来，不一定能立刻改变什么，但至少可以让自己更清楚地看见自己。</p>
-<p>博客对我来说，不只是一个展示结果的地方，更像是一个长期复盘和整理的空间。</p>
-<p>它可以记录成功，也可以记录失败；<br>可以记录清楚的答案，也可以记录暂时想不明白的问题；<br>可以记录学习和科研，也可以记录生活、情绪和成长。</p>
-<hr>
-<h2 id="写给以后的自己"><a href="#写给以后的自己" class="headerlink" title="写给以后的自己"></a>写给以后的自己</h2><p>这是第一篇博客，也是一个开始。</p>
-<p>后面我会尝试持续更新。内容不追求完美，但希望每一篇都能记录一个真实的问题、一段真实的经历，或者一个当下真实的想法。</p>
-<p>也许几年之后再回头看，会觉得现在的很多想法还不成熟。</p>
-<p>也许会发现，有些问题已经慢慢解决了。</p>
-<p>也许也会发现，有些错误仍然在重复出现。</p>
-<p>但这些都没有关系。</p>
-<p>能看见自己的变化，本身就是一种成长。</p>
-<hr>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>希望这个博客能成为我人生阶段中的一份长期记录。</p>
-<p>记录那些经历过的事，犯过的错，想明白的道理，以及还在慢慢寻找答案的自己。</p>
-<blockquote>
-<p>不是所有经历都会立刻给出答案。<br>但只要愿意记录，它们总会在某个时刻变成理解自己的线索。</p>
-</blockquote>
-<hr>
-<h2 id="后续可能会写的内容"><a href="#后续可能会写的内容" class="headerlink" title="后续可能会写的内容"></a>后续可能会写的内容</h2><ul>
-<li>为什么有些错误会重复出现？</li>
-<li>我开始意识到，焦虑很多时候来自不行动</li>
-<li>一次沟通之后，我发现自己太习惯“自己扛”</li>
-<li>记录一次让我印象很深的小事</li>
-<li>成长不是突然变好，而是开始看见自己的问题</li>
-<li>我的 GitHub Pages 博客搭建记录</li>
-<li>研究生阶段如何整理学习和科研资料</li>
-<li>如何用 Git 管理自己的学习文件</li>
-</ul>
-<hr>
-
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              五月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://chenxiangyunyun.github.io/2026/05/23/my-first-blog/" data-id="cuidzT1WJyIDxDpx2XmbzX9b6" data-title="我的第一篇 GitHub 博客：人生阶段的记录与思考" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub%E5%8D%9A%E5%AE%A2/" rel="tag">GitHub博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%88%90%E9%95%BF%E8%AE%B0%E5%BD%95/" rel="tag">成长记录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/" rel="tag">生活感悟</a></li></ul>
+    </ul>
+  </div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Chen Xiangyun</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (false) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@3.0.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (false) {
+      const sub = ["科研、技术与生活记录"].slice()
 
-    </footer>
-  </div>
-  
-</article>
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
 
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
 
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/05/23/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2026-05-23T07:52:58.729Z" itemprop="datePublished">2026-05-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/23/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://chenxiangyunyun.github.io/2026/05/23/hello-world/" data-id="cuidtnEiQV6jIXP7q2ol5pkfQ" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub%E5%8D%9A%E5%AE%A2/" rel="tag">GitHub博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%90%E9%95%BF%E8%AE%B0%E5%BD%95/" rel="tag">成长记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/" rel="tag">生活感悟</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">五月 2026</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2026/05/23/my-first-blog/">我的第一篇 GitHub 博客：人生阶段的记录与思考</a>
-          </li>
-        
-          <li>
-            <a href="/2026/05/23/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 Chen Xiangyun<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/categories" class="mobile-nav-link">分类</a>
-  
-    <a href="/tags" class="mobile-nav-link">标签</a>
-  
-    <a href="/about" class="mobile-nav-link">关于我</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["科研、技术与生活记录"])
+}
+typedJSFn.run(subtitleType)</script></div><script src="/js/tech-home.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
